@@ -166,3 +166,23 @@ if (pagesDropdown) {
     }
   });
 }
+
+// Only one desktop dropdown should remain open at a time.
+const areasDropdown = document.querySelector('.areas-menu');
+if (areasDropdown) {
+  areasDropdown.addEventListener('toggle', () => {
+    if (areasDropdown.open && pagesDropdown) pagesDropdown.open = false;
+  });
+  document.addEventListener('pointerdown', event => {
+    if (areasDropdown.open && !areasDropdown.contains(event.target)) areasDropdown.open = false;
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && areasDropdown.open) {
+      areasDropdown.open = false;
+      areasDropdown.querySelector('summary')?.focus();
+    }
+  });
+}
+if (pagesDropdown) pagesDropdown.addEventListener('toggle', () => {
+  if (pagesDropdown.open && areasDropdown) areasDropdown.open = false;
+});

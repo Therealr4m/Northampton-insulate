@@ -154,3 +154,132 @@
 /* Contact page: the same subdued photographic treatment. Privacy remains plain for reading. */
 .page-heading--photo{position:relative;isolation:isolate;background:linear-gradient(90deg,rgba(9,35,40,.95) 0%,rgba(11,42,47,.83) 52%,rgba(11,42,47,.72) 100%),url("assets/photo-1.webp") center 45%/cover no-repeat;color:white}
 .page-heading--photo>.container{position:relative;z-index:1}
+
+/* ============================================================================
+   EVER WARM / MOBILE UX REFINEMENT — 17 OCT 2026
+   Calm, photo-led local-trade presentation. No generated-looking decoration.
+   Maintained in Website Studio/templates/styles.css to survive future builds.
+   ============================================================================ */
+@media (max-width: 760px) {
+  :root { --mobile-gutter: 20px; }
+  html { scroll-padding-top: 76px; }
+  .container { width: calc(100% - 2 * var(--mobile-gutter)); }
+
+  /* An ordinary trade-business header: clear branding, quick enquiry, menu. */
+  .announcement { display: none; }
+  .site-header { background:#fff; box-shadow: 0 2px 11px rgba(6,30,32,.09); }
+  .header-inner { height:74px; gap:10px; }
+  .brand { gap:8px; min-width:0; margin-right:auto; }
+  .brand-mark, .brand-mark svg { width:40px; height:40px; flex:0 0 40px; }
+  .brand-words strong { font-size:clamp(14px,3.9vw,17px); font-weight:800; letter-spacing:0; white-space:nowrap; }
+  .brand-words small { font-size:8px; letter-spacing:.15em; }
+  .header-cta { display:inline-flex; flex:0 0 auto; min-height:42px; padding:10px 11px; gap:7px; font-size:11px; letter-spacing:0; background:#153c3c; }
+  .menu-toggle { display:flex; flex:0 0 44px; width:44px; height:44px; min-height:44px; border:1px solid #b8c6c0; justify-content:center; align-items:center; }
+  .mobile-nav { background:#fff; border-top:1px solid #e8e9e2; max-height:calc(100dvh - 74px); overflow-y:auto; box-shadow:0 14px 20px rgba(10,32,32,.13); }
+  .mobile-nav .container { padding:13px 0 22px; }
+  .mobile-nav a { font-size:15px; min-height:48px; display:flex; align-items:center; border-bottom:1px solid #e8e9e2; }
+  .mobile-nav .mobile-label { font-size:10px; padding:18px 0 5px; color:#667477; letter-spacing:.09em; }
+  .mobile-nav .mobile-call { font-size:15px; justify-content:center; color:#102e32; background:#f7bc67; border:0; margin-top:14px; font-weight:800; }
+
+  /* Clear image and high-contrast copy, without the numbered editorial labels. */
+  .home-hero { min-height:570px; align-items:center; background:#16383b; }
+  .home-hero .hero-visual img { opacity:.87; filter:saturate(.88) contrast(.96); object-position:50% 50%; animation:none; transform:none; }
+  .home-hero .hero-vignette { background:linear-gradient(90deg,rgba(8,28,30,.91),rgba(8,28,30,.61)),linear-gradient(0deg,rgba(7,25,29,.86),transparent 58%); }
+  .hero-content { padding:46px 0 56px; max-width:100%; }
+  .hero-content .eyebrow { font-size:10px; letter-spacing:.065em; margin-bottom:15px; }
+  .hero-content .sparkle { display:none; }
+  .hero-content h1 { font-size:clamp(31px,8.25vw,42px); line-height:1.16; letter-spacing:-.04em; max-width:390px; margin-bottom:20px; text-wrap:balance; }
+  .hero-content > p { font-size:15px; line-height:1.65; color:#f4f8f6; max-width:370px; margin-bottom:23px; }
+  .hero-buttons { gap:10px; flex-direction:column; max-width:360px; }
+  .hero-buttons .button { width:100%; justify-content:center; min-height:48px; padding:12px 17px; gap:10px; font-size:14px; }
+  .hero-buttons .button-ghost { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.55); }
+  .hero-proof, .hero-note, .trust-strip { display:none; }
+
+  /* Less card/pattern clutter. Standard spacing suitable for tradespeople. */
+  .section { padding:55px 0; }
+  .section-top { margin-bottom:24px; }
+  .section-top h2, .welcome-content h2, .why-section h2, .faq-layout h2,
+  .service-detail h2, .related-section h2, .contact-page h2 { font-size:clamp(29px,7.4vw,37px); letter-spacing:-.035em; line-height:1.2; }
+  .eyebrow { font-size:10px; letter-spacing:.08em; margin-bottom:10px; }
+  .warm-sticker, .why-label, .help-picker:before { display:none; }
+  .welcome-media { margin:0 0 24px; }
+  .welcome-media picture img { height:255px; width:100%; object-fit:cover; border-radius:2px; }
+  .welcome-highlights { flex-direction:column; gap:15px; padding:18px 0; }
+  .service-grid, .help-picker-grid { grid-template-columns:1fr; gap:15px; }
+  .service-card { background:#fff; border:1px solid #e5e5df; box-shadow:none; border-radius:2px; }
+  .service-card-image picture img { height:200px; }
+  .service-card-body { padding:18px 18px 19px; }
+  .service-card h3 { font-size:20px; margin:9px 0; }
+  .service-card p { font-size:14px; line-height:1.6; margin-bottom:17px; }
+  .service-card:hover { transform:none; }
+  .help-picker { background:#f6f5f0; }
+  .help-tile { min-height:0; padding:19px 20px; border:1px solid #e3e5de; box-shadow:none; }
+  .help-tile .tile-icon { display:none; }
+  .help-tile strong { font-size:17px; margin-bottom:15px; }
+  .help-tile small { font-size:13px; }
+  .why-media picture img { height:280px; }
+  .faq-layout { gap:24px; }
+
+  /* Service pages match the homepage, with shorter, legible title areas. */
+  .inner-hero--backdrop { min-height:450px; padding:54px 0 66px; align-items:center; }
+  .inner-hero--backdrop .inner-hero-layout { width:calc(100% - 2 * var(--mobile-gutter)); }
+  .inner-hero--backdrop .breadcrumbs { margin-bottom:23px; }
+  .inner-hero--backdrop .inner-hero-copy h1 { font-size:clamp(32px,8.5vw,42px); line-height:1.17; letter-spacing:-.04em; max-width:100%; }
+  .inner-hero--backdrop .inner-hero-copy > p { font-size:15px; line-height:1.65; }
+  .inner-hero--backdrop .inner-hero-photo picture img { opacity:.82; filter:saturate(.84); animation:none; transform:none; }
+  .inner-hero--backdrop::before { background:linear-gradient(90deg,rgba(6,28,30,.9),rgba(10,32,34,.67)); }
+  .inner-hero--backdrop .eyebrow-light { letter-spacing:.07em; }
+  .inner-hero--backdrop .inner-hero-copy .hero-buttons { max-width:360px; }
+  .inner-hero--backdrop .inner-hero-copy .button { min-height:48px; }
+  .page-heading--photo { padding:58px 0; }
+
+  /* A familiar, modest fixed tap-to-call action; no fake social proof. */
+  .mobile-fixed-call { min-height:54px; font-size:15px; letter-spacing:0; font-weight:800; background:#f5b45f; color:#132d30; box-shadow:0 -3px 14px rgba(10,36,36,.15); }
+  body { padding-bottom:54px; }
+}
+@media (max-width:360px) {
+  :root { --mobile-gutter:16px; }
+  .header-cta { padding:9px 9px; font-size:10px; }
+  .brand-words strong { font-size:14px; }
+  .brand-words small { font-size:7px; }
+  .hero-content h1 { font-size:30px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .home-hero .hero-visual img, .inner-hero--backdrop .inner-hero-photo picture img { animation:none !important; }
+}
+
+/* Photo-first on phones. Real job imagery remains visible and readable copy sits on
+   a plain white surface. Desktop retains the requested faded-image header. */
+@media (max-width:760px) {
+  .home-hero { display:block; min-height:0; padding-top:214px; background:#fff; color:#173b40; }
+  .home-hero .hero-visual { inset:0 0 auto; height:214px; overflow:hidden; }
+  .home-hero .hero-visual img { opacity:1; filter:none; transform:none; animation:none; object-position:center 48%; }
+  .home-hero .hero-vignette { display:none; }
+  .home-hero .hero-grid { display:block; }
+  .home-hero .hero-content { padding:27px 0 34px; }
+  .home-hero .hero-content .eyebrow { color:#8d5a21; }
+  .home-hero .hero-content h1 { color:#173b40; font-size:clamp(30px,7.8vw,39px); line-height:1.18; margin-bottom:15px; }
+  .home-hero .hero-content>p { color:#4e6565; font-size:14px; line-height:1.65; margin-bottom:21px; }
+  .home-hero .hero-buttons .button-ghost { color:#173b40; border-color:#9cacaa; background:#fff; }
+  .home-hero .hero-buttons .button-ghost:hover { background:#f4f5f1; }
+
+  .inner-hero--backdrop { display:block; min-height:0; padding:210px 0 0; background:#fff; color:#173b40; }
+  .inner-hero--backdrop .inner-hero-photo { inset:0 0 auto; height:210px; }
+  .inner-hero--backdrop .inner-hero-photo picture img { opacity:1; filter:none; object-position:center 47%; }
+  .inner-hero--backdrop::before,.inner-hero--backdrop::after { display:none; }
+  .inner-hero--backdrop .inner-hero-copy { padding:23px 0 40px; }
+  .inner-hero--backdrop .breadcrumbs { color:#536b6b; margin-bottom:16px; }
+  .inner-hero--backdrop .eyebrow-light { color:#9b6221; }
+  .inner-hero--backdrop .inner-hero-copy h1 { color:#173b40; text-shadow:none; font-size:clamp(31px,8.2vw,41px); margin-bottom:14px; }
+  .inner-hero--backdrop .inner-hero-copy>p { color:#4e6565; text-shadow:none; margin-bottom:21px; }
+  .inner-hero--backdrop .button-ghost { color:#173b40; border-color:#9cacaa; background:#fff; }
+}
+
+color:#9cacaa; background:#fff; }
+}
+@media(max-width:760px) {
+  .inner-hero--backdrop .breadcrumbs,
+  .inner-hero--backdrop .breadcrumbs a,
+  .inner-hero--backdrop .breadcrumbs span { color:#496467; }
+  .inner-hero--backdrop .eyebrow-light { display:none; }
+}

@@ -24,10 +24,10 @@ if (menuButton && mobileNav) {
 document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 
 const serviceChoices = {
-  'loft-insulation-installation': 'Full Loft Insulation Installation',
-  'loft-insulation-removal': 'Loft Insulation Removal',
-  'loft-boarding': 'Loft Boarding',
-  'loft-insulation-top-ups': 'Loft Insulation Top-Ups'
+  'loft-insulation-installation': `Full Loft Insulation Installation`,
+  'loft-insulation-removal': `Loft Insulation Removal`,
+  'loft-boarding': `Loft Boarding`,
+  'loft-insulation-top-ups': `Loft Insulation Top-Ups`
 };
 const selectedService = new URLSearchParams(window.location.search).get('service');
 document.querySelectorAll('[data-enquiry-form]').forEach(form => {

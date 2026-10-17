@@ -152,3 +152,17 @@ if (typeof IntersectionObserver !== 'undefined' && window.matchMedia('(prefers-r
     revealTargets.forEach(item => observer.observe(item));
   }
 }
+
+// Close the header All pages menu when navigating away, clicking outside or pressing Escape.
+const pagesDropdown = document.querySelector('.pages-menu');
+if (pagesDropdown) {
+  document.addEventListener('pointerdown', event => {
+    if (pagesDropdown.open && !pagesDropdown.contains(event.target)) pagesDropdown.open = false;
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && pagesDropdown.open) {
+      pagesDropdown.open = false;
+      pagesDropdown.querySelector('summary')?.focus();
+    }
+  });
+}

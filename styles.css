@@ -1922,3 +1922,8 @@ h3 {
     text-align: center;
   }
 }
+
+.internal-links{
+  color: rgb(184, 166, 5);
+  font-weight: 600;
+}
